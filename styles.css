@@ -1,0 +1,1088 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+html {
+    scroll-behavior: smooth;
+}
+.navbar{
+    background: #003366;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar__logo
+{
+    background-color: #ffffff;
+    /* background-image: linear-gradient(to top,#ff0844 0%, #ffb199 100%); */
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 800;
+}
+#navbar__logo:hover
+{
+    background-color: #6699CC;
+    /* background-image: linear-gradient(to top,#ff0844 0%, #ffb199 100%); */
+    transition: all 0.5s ease;
+}
+
+
+
+.fa-gem{
+    margin-right: 0.5rem;
+}
+
+.navbar__menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+.navbar__item{
+    height: 80px;
+}
+
+
+.navbar__links{
+    color:#ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding:0px 1rem;
+    height: 100%;
+
+}
+
+
+.navbar__links:hover
+{
+    color:#6699CC;
+    transition: all 0.3s ease;
+}
+
+
+.background-video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+    object-fit: cover;
+}
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.301); /* Black with opacity */
+    z-index: 2; /* Ensures the overlay is above the video but below the text content */
+}
+
+.page-hero {
+    position: relative;
+    overflow: hidden;
+}
+/* Hero Section */
+
+.hero-cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #003366; /* Deep Blue for primary action */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    
+}
+
+.hero-cta:hover {
+    background-color: #6699CC; 
+    color: #003366;
+    cursor: pointer;
+}
+
+.hero-cta-accent {
+    background-color: #33CCCC; /* Teal for accent CTA */
+    /* Rest of the styles are the same */
+}
+
+.hero-cta-accent:hover {
+    background-color: #6699CC; 
+    color: #003366;
+}
+
+.main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* background: #1d1d1d85; */
+    
+}
+
+
+.main__container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+    z-index: 3;
+    width: 100%;
+    max-width: 1300px;
+    padding: 20px;
+}
+
+
+.main__content h1{
+    font-size: 3rem;
+    font-weight: 800;
+    background-color: #ffff;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color:transparent;
+
+}
+
+
+.main__content p{
+    font-size: 1.2rem;
+    background-color: #ffff;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color:transparent;
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    .main__container{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+
+    }
+
+    .main__content{
+        text-align: left;
+        margin-bottom: 4rem;
+
+    }
+
+    .main__content h1{
+        font-size: 2.4rem;
+        margin-top: 2rem;
+
+
+    }
+
+
+    .main__content p{
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+
+}
+
+.hero-arrows {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+}
+
+.why-us-text {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #fff;
+    margin: 0 10px;
+    animation: arrowAnimation 1s infinite alternate;
+}
+
+@keyframes arrowAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-arrows {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .hero-arrows {
+        display: block;
+        padding-top: 0px; /* Adds some space above */
+    }
+    
+    .why-us-text {
+        font-size: 1.5rem; /* Adjusts text size for smaller screens */
+    }
+    .main__content h1{
+        font-size: 2rem;
+        margin-top: 3rem;
+
+    }
+
+    
+
+    .main-content p{
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+}
+
+
+video[poster] {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 960px) {
+    .navbar__container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+
+    }
+    
+
+    .navbar__menu{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+    }
+
+    .navbar__menu.active{
+        background: #131313;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar__logo{
+        padding-left: 25px;
+        font-size: 1.6rem;
+    }
+
+
+    .navbar__toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #ffff; 
+    }
+    .navbar__toggle .bar:hover{
+        background:#f77062;
+        transition: all 0.3s ease;
+    }
+    .navbar__item{
+        width: 100%;
+    }
+    .navbar__links{
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%,20%);
+
+    }
+    .navbar__toggle .bar{
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+
+.services-section {
+    width: 100%;
+}
+.services__header {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #333;
+    padding: 50px 0;
+    margin-bottom: 20px; /* Adds space between the heading and the first service */
+}
+
+.service {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* White background */
+    padding: 50px 10%;
+}
+
+.service:nth-child(even) {
+    background-color: #CCDDFF; 
+}
+
+/* Alternating layout for even-numbered services */
+.service:nth-child(even) .service-content {
+    order: 0;
+}
+
+
+ .service:nth-child(even) .service-image {
+    order: 1;
+    margin-right: 0;
+     margin-left: 5%; 
+} 
+
+
+
+.service-image {
+    width: 50%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-right: 5%;
+}
+
+.service-content {
+    width: 45%;
+    text-align: left;
+}
+
+.service-title {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #555;
+}
+ .service-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #003366; 
+    color: #fff; 
+    text-decoration: none;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.4s ease-in-out;
+} 
+
+
+.service-button:hover {
+    background-color: #6699CC; /* Slightly lighter orange on hover */
+    color: #003366; /* Ensures text color remains white on hover */
+}
+
+.service-button-demo {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #003366; 
+    color: #fff; 
+    text-decoration: none;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.4s ease-in-out;
+} 
+
+
+.service-button-demo:hover {
+    background-color: #6699CC; 
+    color: #003366;
+}
+@media screen and (max-width: 768px) {
+    .service {
+        flex-direction: column;
+        text-align: left;
+        padding: 30px 5%;
+    }
+
+    .service:nth-child(even) .service-content,
+    .service:nth-child(even) .service-image {
+        order: unset; /* Reset the order for mobile */
+    }
+
+    
+    
+
+    .service-image {
+        width: 80%;
+        margin: 0 auto 20px;
+    }
+
+    .service-content {
+        width: 90%;
+        text-align: left;
+    }
+
+    .service-title {
+        font-size: 1.2rem;
+    }
+
+    .service-description {
+        font-size: 0.9rem;
+    }
+    .services__header {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #333;
+        padding: 40px 0;
+        margin-bottom: 10px /* Adds space between the heading and the first service */
+    }
+
+    
+}
+
+
+
+.video-gallery-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+.video-gallery-content {
+    position: relative;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    /* transform: translateX(-50%);*/
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+.video-player {
+    width: 90%; /* You can adjust this as needed */
+    max-width: 800px; /* Adjust based on your preference */
+    display: block; /* Ensures that the video is block level for centering */
+    margin: 0 auto; /* Centers the video within the container */
+}
+/* Transition effects */
+.slide-in-left, .slide-in-right {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+.slide-in-left {
+    animation-name: slideInLeft;
+}
+
+.slide-in-right {
+    animation-name: slideInRight;
+}
+#noVideosAlert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 10%;
+    position: absolute;
+    left: 40%;
+    top: 45%; 
+    color: #fff; 
+    font-size: 1rem; 
+    border-radius: 10px; 
+    padding: 10px;
+}
+@keyframes slideInLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.fade {
+    opacity: 0;
+}
+.video-navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; /* Prevents the nav container from blocking clicks */
+}
+.video-navigation button {
+    pointer-events: auto; /* Ensures buttons are clickable */
+    position: relative;
+    z-index: 10; /* Ensures they are above the video */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    padding: 0 10px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.video-navigation button:hover {
+    opacity: 1;
+}
+
+.video-indicators {
+    position: absolute;
+    bottom: -40px; /* Position below the video */
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px; /* Spacing between dots */
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .video-player {
+        width: 95%;
+    }
+    .video-navigation button {
+        font-size: 18px;
+    }
+}
+
+
+
+
+.heading-underline {
+    display: inline-block; /* Allows the underline to fit the text width */
+    position: relative; /* Needed for absolute positioning of the underline */
+    padding-bottom: 5px; /* Space between text and underline */
+}
+
+.heading-underline::after {
+    content: ''; 
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    width: 70%; 
+    height: 6px; 
+    background-color: #33CCCC; 
+    border-radius: 1px; 
+}
+
+/* ----------Book a Demo Section------------------*/
+
+.book__Demo {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #CCDDFF;
+}
+
+.bookdemo__container {
+    display: inline-block;
+    position: relative;
+}
+
+.bookdemo__header {
+    margin-bottom: 20px;
+}
+.bookdemo__header h1 {
+    font-size: 2.6rem;
+    color: #333;
+}
+.bookdemo__description {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+  
+/* .service-button-demo {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.service-button-demo:hover {
+    background-color: #0056b3; 
+} */
+
+/* -------------Form Modal -----------------*/
+
+.book__Demo {
+    background-color: #CCDDFF;
+    padding: 20px;    
+    margin: auto; /* Center aligns the demo section */
+    width: 100%;
+}
+
+.demo-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px; /* Space between columns */
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.input-group textarea {
+    height:100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.submit-btn {
+    grid-column: 1 / -1; /* Span across all columns */
+    display: block;
+    padding: 10px 20px;
+    margin: 20px auto; /* Centers the button horizontally */
+    border-radius: 10px;
+    border: none;
+    background-color: #003366; 
+    color: #fff; 
+    text-decoration: none;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: #6699CC;
+    color: #003366; 
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    .submit-btn{
+        margin-top: 30px;
+    }
+    .bookdemo__header{
+        text-align: left;
+    }
+    .contact-us h2,
+    .contact-us p{
+        text-align: left;
+        margin: auto 20px;
+    }
+    }
+/* COntact Us Section */
+
+.contact-us {
+    background-color: #003366; /* Light gray background */
+    padding-bottom: 40px;
+    text-align: center; /* Centers the text */
+    width: 100%;/* Ensures the section doesn’t stretch too wide */
+}
+
+.contact-us h2 {
+    color: white; /* Dark blue for heading */
+    font-size: 2rem;
+    padding-top: 35px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+
+.contact-us p {
+    font-size: 16px;
+    color: #cecdcd; /* Dark gray for text */
+}
+
+.contact-us a {
+    color: #91beeb; /* Link color */
+    text-decoration: none; /* No underline */
+}
+
+.contact-us a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+/* body.modal-active {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    border: 5px solid #919191;
+    width: 80%;
+    border-radius: 1.6rem;
+    box-shadow: 0 4px 8px 0 #2e2e2e, 0 6px 20px 0 #313131;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    z-index: 900;
+  }
+  
+  .modal-sidebar {
+    flex: 1;
+    min-width: 150px;
+    border-radius: 1.3rem;
+    background-color: #CCDDFF;
+    z-index: -1;
+  }
+  
+.modal-sidebar-heading h2,
+.modal-sidebar-heading p {
+  text-align: center;
+  margin-bottom: 0.5em;
+  
+}
+
+.modal-sidebar-heading h2{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+
+.modal-sidebar-heading {
+  margin-bottom: 2em;
+
+}
+
+.form-step-image {
+  max-width: 80px; 
+  margin: 50px 35px;
+  display: block;
+  text-align: left;
+}
+.form-step-title,
+.form-step-image {
+  text-align: left;
+}
+.form-step-title {
+  margin-bottom: 1em;
+  margin-left: 50px;
+}
+.form-step-title-description {
+    margin-bottom: 1em;
+    text-align: left;
+    margin-left: 50px;
+    color: #808080;
+  }
+  .form-container {
+    flex: 3;
+    padding: 0 20px;
+  }
+  
+  .form-step {
+    display: none;
+    width: 100%;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  .input-group {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    flex-direction: column;
+  align-items: flex-start;
+  }
+  
+  .input-group label {
+    flex-basis: 30%;
+    margin-left: 50px;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    flex: 1;
+    padding: 10px;
+    margin-left: 50px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 90%;
+  }
+  
+
+  .next-btn,
+  .prev-btn,
+  .submit-btn {
+    background-color: #5f27cd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+ 
+  .progress-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    
+  }
+  .progress-bar:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #ddd;
+    z-index: 1;
+  }
+  
+  
+  .step {
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 2;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+ 
+.step.active .bullet {
+    animation: pulse 1s ease-in forwards;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .bullet {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #ddd;
+    display: inline-block;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #aaa;
+    text-align: center;
+    line-height: 25px;
+  }
+  
+  .check {
+    display: none;
+  }
+  
+  .step.active .bullet {
+    background-color: #5f27cd;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .modal-content {
+      flex-direction: column;
+    }
+  
+    .modal-sidebar {
+      margin-bottom: 20px;
+    }
+  
+    .form-container {
+      padding: 0;
+    }
+  
+    .input-group {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .input-group label {
+      margin-bottom: 5px;
+    }
+  
+    .next-btn,
+    .prev-btn,
+    .submit-btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+   */
