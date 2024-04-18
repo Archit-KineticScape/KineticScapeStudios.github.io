@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const form = document.getElementById('demoForm');
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the form from submitting normally
+        //event.preventDefault(); // Prevent the form from submitting normally
         if(!form.checkValidity())
         {
             return;
