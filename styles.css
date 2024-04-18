@@ -38,7 +38,7 @@ html {
 {
     background-color: #ffffff;
     /* background-image: linear-gradient(to top,#ff0844 0%, #ffb199 100%); */
-    background-size: 100%;
+    background-size: 80%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -47,7 +47,7 @@ html {
     align-items: center;
     cursor: pointer;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 800;
 }
 #navbar__logo:hover
@@ -85,7 +85,6 @@ html {
 
 }
 
-
 .navbar__links:hover
 {
     color:#6699CC;
@@ -100,7 +99,7 @@ html {
     bottom: 0;
     left: 0;
     opacity: 1;
-    z-index: 1;
+    z-index: -1;
     object-fit: cover;
 }
 .video-overlay {
@@ -151,8 +150,8 @@ html {
 
 .main {
     position: relative;
-    height: 100%;
-    width: 100%;
+    
+    background-color: #29282879;
     /* background: #1d1d1d85; */
     
 }
@@ -348,6 +347,7 @@ video[poster] {
 
     #navbar__logo{
         padding-left: 25px;
+        margin-right: 2rem;
         font-size: 1.6rem;
     }
 
@@ -360,7 +360,7 @@ video[poster] {
         background: #ffff; 
     }
     .navbar__toggle .bar:hover{
-        background:#f77062;
+        background:#6699CC;
         transition: all 0.3s ease;
     }
     .navbar__item{
@@ -399,9 +399,17 @@ video[poster] {
 
 }
 
-
+@media screen and (max-width: 300px)
+{
+    #navbar__logo{
+        padding-left: 25px;
+        margin-right: 2rem;
+        font-size: 1rem;
+    }
+}
 .services-section {
     width: 100%;
+    margin-top: 2.5rem;
 }
 .services__header {
     text-align: center;
@@ -822,11 +830,34 @@ video[poster] {
     .bookdemo__header{
         text-align: left;
     }
+    .bookdemo__header h1{
+        font-size: 1.8rem;
+    }
     .contact-us h2,
     .contact-us p{
         text-align: left;
         margin: auto 20px;
     }
+    .input-group label {
+        font-size: 0.8rem;
+    }
+    .input-group input,
+.input-group select {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.input-group textarea {
+    height:80%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
     }
 /* COntact Us Section */
 
