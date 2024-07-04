@@ -6,118 +6,86 @@ const menu = document.querySelector('#mobile-menu')
 
 const menuLinks = document.querySelector('.navbar__menu')
 
+gsap.registerPlugin(ScrollTrigger)
 
+const slider = document.querySelector('.slider');
+const sections = gsap.utils.toArray(".slider section");
+const squigglies = gsap.utils.toArray(".squiggly-container img");
+
+let tl = gsap.timeline({
+    defaults: {
+        ease: "none"
+    },
+    scrollTrigger: {
+        trigger: slider,
+        pin: true,
+        scrub: 2,
+        end: () => "+=" + slider.offsetWidth
+    }
+});
+
+tl.to(slider, {
+    xPercent: -83
+})
+
+sections.forEach((stop, index) => {
+    const content = stop.querySelector('.content-section');
+    const video = stop.querySelector('.scroll-section-video');
+    tl.from(stop.querySelector('.content-section'), {
+        yPercent: -50,
+        opacity: 0,
+        scrollTrigger: {
+            trigger: stop,
+            start: "left center",
+            end: "center center",
+            containerAnimation: tl,
+            scrub: true,
+            markers: false,
+            
+        }
+    })
+    if (video) {
+        tl.from(video, {
+            yPercent: 50,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: stop,
+                start: "left center",
+                end: "center center",
+                containerAnimation: tl,
+                scrub: true,
+                markers: false
+            }
+        }, "<"); // "<" means the video animation starts at the same time as the content animation
+    }
+
+});
+squigglies.forEach((squiggly, i) => {
+    gsap.from(squiggly, {
+        xPercent: squiggly.dataset.distance,
+        scrollTrigger: {
+            scrub: 0.3
+        }
+    })
+})
+
+const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+    //console.log(e)
+})
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
 menu.addEventListener('click', function () {
     menu.classList.toggle('is-active');
     menuLinks.classList.toggle('active');
 })
 
-document.addEventListener('DOMContentLoaded', function () {
-    let videoData = {};
-
-    // Fetch the video data from the JSON file
-    fetch('Data/showcase.json')
-        .then(response => response.json())
-        .then(data => {
-            videoData = data;
-        })
-        .catch(error => {console.error('Error loading video data:', error)});
-
-    const videoModal = document.getElementById('videoGalleryModal');
-    const videoPlayer = document.getElementById('galleryVideo');
-    const dotsContainer = document.querySelector('.video-indicators');
-    let currentVideos = [];
-    let currentVideoIndex = 0;
-
-    // Function to create dots based on video count
-    function createDots(numberOfVideos) {
-        dotsContainer.innerHTML = ''; // Clear existing dots
-        for (let i = 0; i < numberOfVideos; i++) {
-            const dot = document.createElement('span');
-            dot.className = 'dot';
-            dot.dataset.index = i;
-            dot.addEventListener('click', function () {
-                applySlideAnimation(currentVideoIndex, parseInt(this.dataset.index));
-                currentVideoIndex = parseInt(this.dataset.index);
-                updateVideoPlayer();
-            });
-            dotsContainer.appendChild(dot);
-        }
-    }
-
-    // Update video player and dots
-    function updateVideoPlayer() {
-        videoPlayer.src = currentVideos[currentVideoIndex];
-        videoPlayer.load();
-        videoPlayer.play();
-        updateActiveDot();
-    }
-
-    // Update active dot based on current video index
-    function updateActiveDot() {
-        const dots = document.querySelectorAll('.dot');
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentVideoIndex].classList.add('active');
-    }
-
-    // Handle clicks on service buttons
-    document.querySelectorAll('.service-button').forEach(button => {
-        button.addEventListener('click', function (event) {
-            event.preventDefault();
-            const key = this.getAttribute('data-key');
-            currentVideos = videoData[key] || [];
-            if (currentVideos.length === 0) {
-                console.error('No videos found for key:', key);
-                document.getElementById('videoGalleryContent').style.display = 'none';
-            document.getElementById('noVideosAlert').style.display = 'flex'; // Show the "Coming Soon..." message
-            videoModal.style.display = 'block';
-
-                
-
-                return;
-            }
-            document.getElementById('videoGalleryContent').style.display = 'block';
-            document.getElementById('noVideosAlert').style.display = 'none';
-            createDots(currentVideos.length);
-            currentVideoIndex = 0; // Start with the first video
-            updateVideoPlayer();
-            videoModal.style.display = 'block';
-        });
-    });
-
-    // Close modal by clicking outside the video content
-    videoModal.addEventListener('click', function (event) {
-        if (event.target === this) {
-            videoModal.style.display = 'none';
-            videoPlayer.pause();
-            videoPlayer.currentTime = 0;  // Optionally reset the video
-        }
-    });
-
-    // Navigation buttons with animation
-    document.querySelector('.prev-video').addEventListener('click', function () {
-        changeVideo(-1);
-    });
-
-    document.querySelector('.next-video').addEventListener('click', function () {
-        changeVideo(1);
-    });
-
-    function changeVideo(direction) {
-        const newIndex = (currentVideoIndex + direction + currentVideos.length) % currentVideos.length;
-        applySlideAnimation(currentVideoIndex, newIndex);
-        currentVideoIndex = newIndex;
-        updateVideoPlayer();
-    }
-
-    function applySlideAnimation(currentIndex, newIndex) {
-        const animationName = newIndex > currentIndex ? 'slide-in-left' : 'slide-in-right';
-        videoPlayer.classList.add(animationName);
-        videoPlayer.addEventListener('animationend', () => {
-            videoPlayer.classList.remove(animationName);
-        }, { once: true });
-    }
-});
 
 // document.getElementById('openModal').addEventListener('click', function() {
 //     document.getElementById('demoModal').style.display = "block";
@@ -134,39 +102,31 @@ document.addEventListener('DOMContentLoaded', function () {
 //     }
 // }
 
-// document.getElementById('demoRequestForm').addEventListener('submit', function(event) {
-//     event.preventDefault();
-//     // Collect and log form data
-//     // Close modal on successful submission
-//     document.getElementById('demoModal').style.display = "none";
-//     alert('Thank you for your request! We will get back to you soon.');
-//     this.reset(); // Optionally clear the form
-// });
 
 
-// Define the steps and the current step index
+
+//Define the steps and the current step index
 const form = document.getElementById('demoForm');
 
-    form.addEventListener('submit', function(event) {
-        //event.preventDefault(); // Prevent the form from submitting normally
-        if(!form.checkValidity())
-        {
-            return;
+form.addEventListener('submit', function (event) {
+    //event.preventDefault(); // Prevent the form from submitting normally
+    if (!form.checkValidity()) {
+        return;
+    }
+    // Show a SweetAlert dialog
+    Swal.fire({
+        title: 'Success!',
+        text: 'We will get back to you soon!',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Perform any action after the confirmation
+            // form.submit(); // To submit the form
+            // location.href = 'thankyou.html'; // Or redirect
         }
-        // Show a SweetAlert dialog
-        Swal.fire({
-            title: 'Success!',
-            text: 'We will get back to you soon!',
-            icon: 'success',
-            confirmButtonText: 'OK'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Perform any action after the confirmation
-                // form.submit(); // To submit the form
-                // location.href = 'thankyou.html'; // Or redirect
-            }
-        });
     });
+});
 
 function submitForm() {
     // Validate and submit form data
@@ -204,4 +164,31 @@ for (const [code, name] of Object.entries(countryOptions)) {
     countrySelector.appendChild(option);
 }
 
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const sections = document.querySelectorAll('.content-section');
+
+//     window.addEventListener('scroll', () => {
+//         let currentSectionIndex = 0;
+
+//         sections.forEach((section, index) => {
+//             const sectionTop = section.offsetTop;
+//             const sectionHeight = section.clientHeight;
+
+//             if (window.scrollY >= sectionTop - sectionHeight / 3) {
+//                 currentSectionIndex = index;
+//             }
+//         });
+
+//         sections.forEach((section, index) => {
+//             if (index === currentSectionIndex) {
+//                 section.style.opacity = '1';
+//                 section.style.transform = 'translateY(0)';
+//             } else {
+//                 section.style.opacity = '0';
+//                 section.style.transform = 'translateY(100px)';
+//             }
+//         });
+//     });
+// });
 

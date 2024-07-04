@@ -10,21 +10,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
-        <link rel="icon" type="image/svg" href="Images/Logos/LogoDesign3.svg">
+    <link rel="icon" type="image/svg" href="Images/Logos/LogoDesign3.svg">
 
 </head>
 
 <body>
     <nav class="navbar">
         <div class="navbar__container">
-            <a href="/index.html" id="navbar__logo"> <img src="Images/Logos/LogoDesign3.svg" alt="Kinetic Scape Studios Logo" style="height:50px; margin-right: 20px;">Kinetic Scape Studios</a>
+            <a href="/index.html" id="navbar__logo"> <img src="Images/Logos/LogoDesign3.svg"
+                    alt="Kinetic Scape Studios Logo" style="height:50px; margin-right: 20px;">Kinetic Scape Studios</a>
             <div class="navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
             <ul class="navbar__menu">
-                
+
                 <li class="navbar__item">
                     <a href="#services_sect" class="navbar__links">
                         Showcase
@@ -36,7 +37,7 @@
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="#contact-us_sect" class="navbar__links">
+                    <a href="#contact-us-sect" class="navbar__links">
                         Contact Us
                     </a>
                 </li>
@@ -46,174 +47,162 @@
 
 
     <!-- Hero Section -->
-    
-        
-        <div class="main">
+
+
+
+    <div class="main" id="home">
+
+        <div class="hero-section">
             <video loop muted autoplay playsinline poster="URL/TO/poster.jpg" class="background-video">
-                <source src="BGVid.mp4" type="video/mp4">
-    
-                <!-- <source src="URL/TO/video.webm" type="video/webm">
-            <source src="URL/TO/video.ogv" type="video/ogv"> -->
+                <source src="videos/videoplayback.webm" type="video/mp4">
             </video>
-            <div class="main__container">
-                <div class="main__content">
-                    <h1 class="heading-underline">Enter the Digital Realm</h1>
-                    <p>Kinetic Scape Studios leads in immersive experiences and innovative development solutions,
-                        sparking
-                        imagination and redefining entertainment. Join us in shaping the future.</p>
-                    <a href="#requestproto_sect" class="hero-cta">Request a Prototype</a>
-                    <a href="#contact-us_sect" class="hero-cta hero-cta-accent">Contact Us</a>
-                </div>
-                <!-- <div class="main__img--container">
-                <img src="images/VR.svg" alt="pic" id = "main_img" />
-            </div> -->
+            <div class="hero-content">
+                <h1 class="heading-underline">Enter the Digital Realm</h1>
+                <p>Kinetic Scape Studios transforms brand engagement with immersive marketing solutions, enhancing brand presence and driving customer interaction. Join us in revolutionizing the future of marketing.</p>
+                <a href="#requestproto_sect" class="hero-cta">Request a Prototype</a>
+                <a href="#contact-us_sect" class="hero-cta hero-cta-accent">Contact Us</a>
             </div>
-            <!-- <div class="hero-arrows">
-                <h2 class="why-us-text">Why Us?</h2>
-                <div class="arrow-container">
-                    <div class="arrow"></div>
-                    <div class="arrow"></div>
-                    <div class="arrow"></div>
-                </div>
-            </div> -->
         </div>
-    
-    <!-- Services Section -->
-    <div class="services" id="services_sect">
-        <div class="services__container">
-            <div class="services-section">
-                <div class="service">
-                    <img src="Images/Immersivetechonology.svg" alt="Virtual Reality" class="service-image">
-                    <div class="service-content">
-                        <div class="service-title">
-                            <h2 class="heading-underline">Immersive Techonology</h1>
-                        </div>
-                        <p class="service-description">Dive into the forefront of digital experiences with our Immersive
-                            Technology solutions. Specializing in VR and AR, we create captivating environments that
-                            transport you beyond the bounds of reality.</p>
-                        <a href="#" class="service-button" data-target="#videoGalleryModal"
-                            data-key="immersiveTech">View Previous Projects ></a>
-                    </div>
-                </div>
-                <div class="service service-gamedev">
-                    <img src="Images/GameDevelopment.svg" alt="Augmented Reality" class="service-image">
-                    <div class="service-content">
-                        <div class="service-title">
-                            <h2 class="heading-underline">Game Development</h1>
-                        </div>
-                        <p class="service-description">Explore our Game Development services powered by Unity and Unreal
-                            Engine. We specialize in creating immersive gameplay and interactive stories, transforming
-                            entertainment with cutting-edge technology. Let's bring your vision to life.</p>
-                        <a href="#" class="service-button" data-target="#videoGalleryModal" data-key="gameDev">View Previous Projects ></a>
-
-                    </div>
-
-                </div>
-                <div class="service ar">
-                    <img src="Images/mobileandapp.svg" alt="Virtual Reality" class="service-image">
-                    <div class="service-content">
-                        <div class="service-title">
-                            <h2 class="heading-underline">Mobile & Web</h1>
-                        </div>
-                        <p class="service-description">Unlock the full potential of your mobile and web presence with
-                            our cutting-edge development services. From responsive design to feature-rich apps, we bring
-                            your digital ideas to life.</p>
-                        <a href="#" class="service-button" data-target="#videoGalleryModal" data-key="mobileWeb">View Previous Projects ></a>
-                    </div>
-                </div>
-                <!-- Service 2 -->
-                
-                <!-- Add more services as needed -->
-                <!-- Video Modal Structure -->
-                <div id="videoGalleryModal" class="video-gallery-modal">
-                    <div id="noVideosAlert" style="display: none;">
-                        <h1>Coming Soon...</h1>
-                    </div>
-                    <div id="videoGalleryContent" class="video-gallery-content">
-                        <video id="galleryVideo" class="video-player" loop></video>
-                        <div class="video-navigation">
-                            <button class="prev-video">&#10094;</button>
-                            <button class="next-video">&#10095;</button>
-                        </div>
-                        <div class="video-indicators">
-                            <span class="dot" data-index="0"></span>
-                            <span class="dot" data-index="1"></span>
-                            <span class="dot" data-index="2"></span>
-                        </div>
-                    </div>
-                </div>
 
 
+        <div class="outer">
+            <div class="slider">
+
+                <section class="scroll-view-section">
+                    <div class="inner">
+                        <div class="content-section">
+                            <h1 class="heading-underline">Our Work</h1>
+                            <p><img src="Images/rightarrow.png" alt=""></p>
+                        </div>
+                    </div>
+                </section>
+                <section class="scroll-view-section">
+                    <div class="inner">
+
+                        <div class="content-section">
+                            <h2 class="heading-underline">Immersive Estate</h1>
+                                <p>Kinetic Scape Studios leads in immersive experiences and innovative development
+                                    solutions, sparking
+                                    imagination and redefining entertainment. Join us in shaping the future.</p>
+                                <a href="#requestproto_sect" class="hero-cta hero-cta-content">DOWNLOAD DEMO FOR
+                                    ANDROID</a>
+                                <a href="#contact-us_sect"
+                                    class="hero-cta hero-cta-accent hero-cta-content-accent">DOWNLOAD DEMO FOR WINDOWS
+                                    X64</a>
+
+
+                        </div>
+                        <video loop muted autoplay playsinline poster="URL/TO/poster.jpg" class="scroll-section-video">
+                            <source src="BGVid.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </section>
+                <section class="scroll-view-section">
+                    <div class="inner">
+
+                        <div class="content-section">
+                            <h2 class="heading-underline">Virtual Store</h1>
+                                <p>Kinetic Scape Studios leads in immersive experiences and innovative development
+                                    solutions, sparking
+                                    imagination and redefining entertainment. Join us in shaping the future.</p>
+                                <a href="#requestproto_sect" class="hero-cta hero-cta-content">VISIT VIRTUAL STORE</a>
+
+                        </div>
+                        <video loop muted autoplay playsinline poster="URL/TO/poster.jpg" class="scroll-section-video">
+                            <source src="BGVid.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </section>
+                <section class="scroll-view-section">
+                    <div class="inner">
+
+                        <div class="content-section">
+                            <h2 class="heading-underline">Immersive Event Solutions</h1>
+                                <p>Coming Soon...</p>
+
+                        </div>
+
+                    </div>
+                </section>
+                <section class="scroll-view-section">
+                    <div class="inner">
+
+                        <div class="content-section">
+                            <h2 class="heading-underline">Immersive Event Solutions</h1>
+                                <p>Coming Soon...</p>
+
+                        </div>
+
+                    </div>
+                </section>
+                <section class="scroll-view-section">
+                    <div class="inner">
+                        <div class="content-section">
+                            <h2 class="heading-underline">Request a Prototype</h2>
+                            <form id="demoForm" class="demo-form" action="https://formspree.io/f/mpzvkwjv"
+                                method="POST">
+                                <div class="form-column left-column">
+                                    <div class="input-group">
+                                        <label for="name">Name:</label>
+                                        <input type="text" id="name" name="name" placeholder="e.g., John Doe" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="country">Country:</label>
+                                        <select id="country" name="country" required>
+                                            <!-- Country options will be added dynamically -->
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="phone">Phone Number:</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="email">Email:</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="form-column right-column">
+                                    <div class="input-group">
+                                        <label for="project-description">Short Project Description:</label>
+                                        <textarea id="project-description" name="project-description"
+                                            placeholder="Describe your project briefly."></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="submit-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
             </div>
-
         </div>
-    </div>
-    <!--Book A Demo Section-->
 
-    <!--Book A Demo Section-->
-    <div class="book__Demo" id="requestproto_sect">
-        <div class="bookdemo__container">
-            <div class="bookdemo__header">
-                <h1 class="heading-underline">Claim Your Free Prototype Demo</h1>
-                <p class="bookdemo__description">
-                    Free prototype demo available now. Claim yours and discover innovation.
-                </p>
-            </div>
-            <!-- Simplified Form -->
-            <form id="demoForm" class="demo-form" action="https://formspree.io/f/mpzvkwjv"
-            method="POST">
-                <div class="form-column left-column">
-                    <div class="input-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" placeholder="e.g., John Doe" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="country">Country:</label>
-                        <select id="country" name="country" required>
-                            <!-- Country options will be added dynamically -->
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label for="phone">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                </div>
-                <div class="form-column right-column">
-                    <div class="input-group">
-                        <label for="organization">Organization Name (optional):</label>
-                        <input type="text" id="organization" name="organization">
-                    </div>
-                    <div class="input-group">
-                        <label for="project-type">Project Type:</label>
-                        <select id="project-type" name="project-type">
-                            <option value="Immersive Technology">Immersive Technology (AR/VR)</option>
-                            <option value="Game Development">Game Development</option>
-                            <option value="MobileApp/Web Development">MobileApp/Web Development</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label for="project-description">Short Project Description:</label>
-                        <textarea id="project-description" name="project-description"
-                            placeholder="Describe your project briefly."></textarea>
-                    </div>
-                </div>
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
+        <div class="squiggly-container">
+            <img src="Images/vrman.png" data-distance="80" alt="Animated vector squiggly">
+            <img src="Images/video.png" data-distance="200" alt="Animated vector squiggly">
+            <img src="Images/scalability.png" data-distance="300" alt="Animated vector squiggly">
+            <img src="Images/vrman.png" data-distance="140" alt="Animated vector squiggly">
+            <img src="Images/video.png" data-distance="40" alt="Animated vector squiggly">
+            <img src="Images/scalability.png" data-distance="210" alt="Animated vector squiggly">
+            <img src="Images/vrman.png" data-distance="190" alt="Animated vector squiggly">
+            <img src="Images/video.png" data-distance="155" alt="Animated vector squiggly">
+            <img src="Images/scalability.png" data-distance="80" alt="Animated vector squiggly">            
+            <img src="Images/SquigglyLines.png" data-distance="158" alt="Animated vector squiggly">
         </div>
     </div>
-    <!-- Contact Us Section -->
-    <div class="contact-us" id="contact-us_sect">
-        <h2>Contact Us</h2>
-        <p>If you have any questions, please feel free to reach out to us at.</p>
-        <a href="mailto:archit.kineticscapestudios@gmail.com">archit.kineticscapestudios@gmail.com</a>
+    <div id="contact-us-sect" class="contact-us-section">
+        Contact us @
+        archit@kineticscapestudios.com
     </div>
 
-    <script src="scripts.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="scripts.js"></script>
+
 </body>
 
 </html>
