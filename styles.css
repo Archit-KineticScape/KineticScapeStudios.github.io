@@ -266,6 +266,7 @@ html.lenis body {
             h2{
                 font-size: 2rem;
                 margin-bottom: 20px;
+                text-align: center;
             }
             p {
                 font-size: 1.2rem;
@@ -358,8 +359,144 @@ html.lenis body {
     }
 
 }
+@media screen and (max-width: 1280px) {
+    .scroll-view-section {
+        height: 100%;
+        width: 100%;
+        margin: 2em;
+        .inner {
+            margin: 7em 0;
+            display: flex;
+            height: calc(100% - 14em);
+            align-items: center;
+            color: white;
+            h2{
+                text-transform: uppercase;
+                text-align: left;
+                align-items: flex-end;
+            }
+            
+            .scroll-section-video {
+                height: 100%;
+                width: 100%;
+                max-width: 600px;
+                border: 5px solid white; /* Adjust the border size and color as needed */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow for better visibility */
+                border-radius: 10px; /* Optional: Add rounded corners */
+            }
+    
+            .content-section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items:center;
+                height: 100%;
+                width: 100%;
+                text-align: left;
+                padding: 0 20px;
+                
+    
+                h1 {
+                    font-size: 4rem;
+                    margin-bottom: 20px;
+                    
+                }
+                h2{
+                    font-size: 1.4rem;
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+                p {
+                    font-size: .8rem;
+                    /* Adjust font size as needed */
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                    max-width: 80%;
+                    text-align: center;
+                    /* Ensure text doesn't stretch too wide */
+                }
+                .hero-cta-content{
+                    font-size: .8rem;
+                    text-align: center;
+                }
+                .hero-cta-content-accent{
+                    font-size: .8rem;
+                    text-align: center;
+                }
+            }
+    
+        }
+    }
+}
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1024px) {
+    .scroll-view-section {
+        height: 100%;
+        width: 100%;
+        margin: 2em;
+        .inner {
+            margin: 5em 0;
+            display: flex;
+            height: calc(100% - 14em);
+            align-items: center;
+            color: white;
+            h2{
+                text-transform: uppercase;
+                text-align: left;
+                align-items: flex-end;
+            }
+            
+            .scroll-section-video {
+                height: 100%;
+                width: 100%;
+                max-width: 500px;
+                border: 5px solid white; /* Adjust the border size and color as needed */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow for better visibility */
+                border-radius: 10px; /* Optional: Add rounded corners */
+            }
+    
+            .content-section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items:center;
+                height: 100%;
+                width: 100%;
+                text-align: left;
+                padding: 0 20px;
+                
+    
+                h1 {
+                    font-size: 4rem;
+                    margin-bottom: 20px;
+                    
+                }
+                h2{
+                    font-size: 1.4rem;
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+                p {
+                    font-size: .8rem;
+                    /* Adjust font size as needed */
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                    max-width: 80%;
+                    text-align: center;
+                    /* Ensure text doesn't stretch too wide */
+                }
+                .hero-cta-content{
+                    font-size: .8rem;
+                    text-align: center;
+                }
+                .hero-cta-content-accent{
+                    font-size: .8rem;
+                    text-align: center;
+                }
+            }
+    
+        }
+    }
 }
 @media screen and (max-width: 960px) {
     .contact-us-section{
@@ -440,6 +577,11 @@ html.lenis body {
     /* Centers the text */
     width: 100%;
     font-size: 2rem;
+}
+@media screen and (max-width: 1280px) {
+    .contact-us-section{
+        font-size: 1rem;
+    }
 }
 @media screen and (max-width: 960px) {
     .contact-us-section{
@@ -668,7 +810,50 @@ video[poster] {
     color: #003366;
     cursor: pointer;
 }
+@media screen and (max-width: 1024px) {
+    .submit-btn {
+        margin-top: 30px;
+    }
 
+    .bookdemo__header {
+        text-align: left;
+    }
+
+    .bookdemo__header h1 {
+        font-size: 1.8rem;
+    }
+
+
+
+    .contact-us h2,
+    .contact-us p {
+        margin: auto 40px;
+    }
+
+
+    .input-group label {
+        font-size: 0.8rem;
+    }
+
+    .input-group input,
+    .input-group select {
+        width: 100%;
+        font-size: 0.8rem;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background: #fff;
+    }
+
+    .input-group textarea {
+        height: 80%;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background: #fff;
+    }
+}
 @media screen and (max-width: 700px) {
     .submit-btn {
         margin-top: 30px;
