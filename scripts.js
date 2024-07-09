@@ -75,7 +75,7 @@ function updateTimeline() {
                 scrollTrigger: {
                     trigger: stop,
                     start: "top center",
-                    end: "bottom center",
+                    end: "center center",
                     scrub: true,
                     markers: true,
                 }
