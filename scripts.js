@@ -40,7 +40,7 @@ sections.forEach((stop, index) => {
             end: "center center",
             containerAnimation: tl,
             scrub: true,
-            markers: false,
+            markers: true,
             
         }
     })
@@ -193,5 +193,6 @@ for (const [code, name] of Object.entries(countryOptions)) {
 // });
 
 function openVirtualStore() {
-    window.open('V1.0.0/VirtualStore.html', '_blank', 'width=960,height=600');
+    var newTab = window.open('V1.0.1/index.html', '_blank');
+    newTab.focus();
 }

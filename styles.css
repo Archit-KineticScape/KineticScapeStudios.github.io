@@ -223,27 +223,25 @@ html.lenis body {
 }
 
 .scroll-view-section {
-    height: 100vh;
+    height: 100%;
     width: 100%;
-
+    margin: 2em;
     .inner {
-        margin: 7em;
-        position: relative;
+        margin: 7em 0;
         display: flex;
         height: calc(100% - 14em);
-        align-items: end;
+        align-items: center;
         color: white;
-        h1 {
+        h2{
             text-transform: uppercase;
             text-align: left;
+            align-items: flex-end;
         }
-        h2{
-            text-transform: uppercase
-        }
+        
         .scroll-section-video {
-            height: 80%;
-            width: 80%;
-            max-width: 1000px;
+            height: 100%;
+            width: 100%;
+            max-width: 700px;
             border: 5px solid white; /* Adjust the border size and color as needed */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow for better visibility */
             border-radius: 10px; /* Optional: Add rounded corners */
@@ -253,7 +251,7 @@ html.lenis body {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items:center;
             height: 100%;
             width: 100%;
             text-align: left;
@@ -275,6 +273,7 @@ html.lenis body {
                 line-height: 1.6;
                 margin-bottom: 20px;
                 max-width: 80%;
+                text-align: center;
                 /* Ensure text doesn't stretch too wide */
             }
         }
@@ -368,62 +367,64 @@ html.lenis body {
     }
 
     .scroll-view-section {
-        
-    
+        height: 100%;
+        width: 100%;
+        margin-left: 7em;
         .inner {
+            display: flex;            
             flex-direction: column;
-            align-items: center; /* Align items to the start */
-            justify-content: center;
-            text-align: left; /* Ensure text alignment is left */
-            padding-top: 200px;
-            width: 100%;
-            max-width: 1200px; /* Ensure content doesn't stretch too wide */
-            margin: 0 auto;
-    
-            h1 , h2{
+            height: 100%;
+            
+            align-items: center;
+            color: white;
+            
+            h2{
+                text-transform: uppercase;
                 text-align: center;
             }
-            
             .scroll-section-video {
-                height: 80%;
-                width:80%;
-                padding-top: 0px;
+                height: 100%;
+                width: 100%;
+                max-height:200px ;
+                max-width: 350px;
+                border: 5px solid white; /* Adjust the border size and color as needed */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow for better visibility */
+                border-radius: 10px; /* Optional: Add rounded corners */
             }
     
             .content-section {
-                align-items:center;
-                text-align:center;
-                padding: 0 20px;
+              
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 40%;
+                width: 300px;
+                text-align: center;
+                padding-bottom: 10px;
+                
     
-                h1{
-                    font-size: 1.4rem;
+                h1 {
+                    font-size: 4rem;
+                    margin-bottom: 20px;
+                    
                 }
                 h2{
-                    font-size:1rem;
+                    font-size: 1.5rem;
+                    margin-bottom: 20px;
                 }
                 p {
-                    font-size: .7rem;
+                    font-size: .8rem;
                     /* Adjust font size as needed */
                     line-height: 1.6;
                     margin-bottom: 20px;
-                    max-width: 100%;
+                    max-width: 80%;
                     /* Ensure text doesn't stretch too wide */
                 }
-
-                .hero-cta-content {
-                    display: inline-block;
-                    margin-top: -2px;
-                    background-color: #003366;
-                    /* Deep Blue for primary action */
-                    color: #ffffff;
-                    text-decoration: none;
-                    font-size: 0.5rem;
-                    font-weight: bold;
-                    border-radius: 10px;
-                    transition: background-color 0.3s ease;
-                
+                .hero-cta-content{
+                    font-size: .8rem;
                 }
-                .hero-cta-accent {
+                .hero-cta-content-accent{
                     display: none;
                 }
             }
