@@ -365,19 +365,23 @@ html.lenis body {
     .contact-us-section{
         font-size: 0px;
     }
-
+    .slider{
+        flex-direction: column;
+        width: 100%;
+    }
+    
     .scroll-view-section {
         height: 100%;
         width: 100%;
-        margin-left: 7em;
+        margin: 0;
         .inner {
             display: flex;            
             flex-direction: column;
             height: 100%;
-            
+            width: 100%;            
             align-items: center;
             color: white;
-            
+            margin-top: 25%;
             h2{
                 text-transform: uppercase;
                 text-align: center;
@@ -393,25 +397,20 @@ html.lenis body {
             }
     
             .content-section {
-              
+                margin-top: 10%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                height: 40%;
-                width: 300px;
+                height: 100%;
+                width:100%;
                 text-align: center;
                 padding-bottom: 10px;
                 
     
-                h1 {
-                    font-size: 4rem;
-                    margin-bottom: 20px;
-                    
-                }
+                
                 h2{
                     font-size: 1.5rem;
-                    margin-bottom: 20px;
                 }
                 p {
                     font-size: .8rem;
