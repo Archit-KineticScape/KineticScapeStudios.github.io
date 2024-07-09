@@ -15,44 +15,59 @@ function updateTimeline() {
     }
 
     const isMobile = window.innerWidth < 960;
+    // if (isMobile) {
+    //     sections.forEach((stop, index) => {
+    //         const content = stop.querySelector('.content-section');
+    //         const video = stop.querySelector('.scroll-section-video');
+    //         gsap.from(content, {
+    //             opacity: 0,
+    //             scrollTrigger: {
+    //                 trigger: stop,
+    //                 start: "top center",
+    //                 end: "center center",
+    //                 scrub: true,
+    //                 markers: true,
+    //             }
+    //         });
+    //         if (video) {
+    //             gsap.from(video, {
+    //                 opacity: 0,
+    //                 scrollTrigger: {
+    //                     trigger: stop,
+    //                     start: "top center",
+    //                     end: "bottom center",
+    //                     scrub: true,
+    //                     markers: false
+    //                 }
+    //             });
+    //         }
+    //     });
 
+    // }
     if (!isMobile) {
-        const xPercentValue = -83;
+            const xPercentValue = -83;
 
-        tl = gsap.timeline({
-            defaults: {
-                ease: "none"
-            },
-            scrollTrigger: {
-                trigger: slider,
-                pin: true,
-                scrub: 2,
-                end: () => "+=" + slider.offsetWidth
-            }
-        });
-
-        tl.to(slider, {
-            xPercent: xPercentValue
-        });
-
-        sections.forEach((stop, index) => {
-            const content = stop.querySelector('.content-section');
-            const video = stop.querySelector('.scroll-section-video');
-            tl.from(content, {
-                yPercent: -50,
-                opacity: 0,
+            tl = gsap.timeline({
+                defaults: {
+                    ease: "none"
+                },
                 scrollTrigger: {
-                    trigger: stop,
-                    start: "left center",
-                    end: "center center",
-                    containerAnimation: tl,
-                    scrub: true,
-                    markers: true,
+                    trigger: slider,
+                    pin: true,
+                    scrub: 2,
+                    end: () => "+=" + slider.offsetWidth
                 }
             });
-            if (video) {
-                tl.from(video, {
-                    yPercent: 50,
+
+            tl.to(slider, {
+                xPercent: xPercentValue
+            });
+
+            sections.forEach((stop, index) => {
+                const content = stop.querySelector('.content-section');
+                const video = stop.querySelector('.scroll-section-video');
+                tl.from(content, {
+                    yPercent: -50,
                     opacity: 0,
                     scrollTrigger: {
                         trigger: stop,
@@ -60,42 +75,55 @@ function updateTimeline() {
                         end: "center center",
                         containerAnimation: tl,
                         scrub: true,
-                        markers: false
-                    }
-                }, "<"); // "<" means the video animation starts at the same time as the content animation
-            }
-        });
-    } else {
-        sections.forEach((stop, index) => {
-            const content = stop.querySelector('.content-section');
-            const video = stop.querySelector('.scroll-section-video');
-            gsap.from(content, {
-                yPercent: -50,
-                opacity: 0,
-                scrollTrigger: {
-                    trigger: stop,
-                    start: "top center",
-                    end: "center center",
-                    scrub: true,
-                    markers: true,
-                }
-            });
-            if (video) {
-                gsap.from(video, {
-                    yPercent: 50,
-                    opacity: 0,
-                    scrollTrigger: {
-                        trigger: stop,
-                        start: "top center",
-                        end: "bottom center",
-                        scrub: true,
-                        markers: false
+                        markers: false,
                     }
                 });
-            }
-        });
+                if (video) {
+                    tl.from(video, {
+                        yPercent: 50,
+                        opacity: 0,
+                        scrollTrigger: {
+                            trigger: stop,
+                            start: "left center",
+                            end: "center center",
+                            containerAnimation: tl,
+                            scrub: true,
+                            markers: false
+                        }
+                    }, "<"); // "<" means the video animation starts at the same time as the content animation
+                }
+            });
+        }
+        // } else {
+        //     sections.forEach((stop, index) => {
+        //         const content = stop.querySelector('.content-section');
+        //         const video = stop.querySelector('.scroll-section-video');
+        //         gsap.from(content, {
+        //             opacity: 0,
+        //             scrollTrigger: {
+        //                 trigger: stop,
+        //                 start: "top center",
+        //                 end: "center center",
+        //                 scrub: true,
+        //                 markers: false,
+        //             }
+        //         });
+        //         if (video) {
+        //             gsap.from(video, {
+        //                 yPercent: 50,
+        //                 opacity: 0,
+        //                 scrollTrigger: {
+        //                     trigger: stop,
+        //                     start: "top center",
+        //                     end: "bottom center",
+        //                     scrub: true,
+        //                     markers: false
+        //                 }
+        //             });
+        //         }
+        // });
     }
-}
+
 
 squigglies.forEach((squiggly, i) => {
     gsap.from(squiggly, {
@@ -128,55 +156,55 @@ window.addEventListener('resize', updateTimeline);
 updateTimeline();
 
 // Form submission logic remains unchanged
-const form = document.getElementById('demoForm');
+// const form = document.getElementById('demoForm');
 
-form.addEventListener('submit', function (event) {
-    if (!form.checkValidity()) {
-        return;
-    }
-    Swal.fire({
-        title: 'Success!',
-        text: 'We will get back to you soon!',
-        icon: 'success',
-        confirmButtonText: 'OK'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            // Perform any action after the confirmation
-        }
-    });
-});
+// form.addEventListener('submit', function (event) {
+//     if (!form.checkValidity()) {
+//         return;
+//     }
+//     Swal.fire({
+//         title: 'Success!',
+//         text: 'We will get back to you soon!',
+//         icon: 'success',
+//         confirmButtonText: 'OK'
+//     }).then((result) => {
+//         if (result.isConfirmed) {
+//             // Perform any action after the confirmation
+//         }
+//     });
+// });
 
-function submitForm() {
-    alert('Form submitted!'); // Placeholder action
-}
+// function submitForm() {
+//     alert('Form submitted!'); // Placeholder action
+// }
 
-const countrySelector = document.getElementById('country');
-const phoneInput = document.getElementById('phone');
+// const countrySelector = document.getElementById('country');
+// const phoneInput = document.getElementById('phone');
 
-countrySelector.addEventListener('change', function () {
-    const countryData = {
-        'US': '+1',
-        'CA': '+1',
-        'GB': '+44',
-        'IN': '+91'
-    };
-    const prefix = countryData[this.value] || '';
-    phoneInput.placeholder = prefix;
-});
+// countrySelector.addEventListener('change', function () {
+//     const countryData = {
+//         'US': '+1',
+//         'CA': '+1',
+//         'GB': '+44',
+//         'IN': '+91'
+//     };
+//     const prefix = countryData[this.value] || '';
+//     phoneInput.placeholder = prefix;
+// });
 
-const countryOptions = {
-    'US': 'United States',
-    'CA': 'Canada',
-    'GB': 'United Kingdom',
-    'IN': 'India'
-};
+// const countryOptions = {
+//     'US': 'United States',
+//     'CA': 'Canada',
+//     'GB': 'United Kingdom',
+//     'IN': 'India'
+// };
 
-for (const [code, name] of Object.entries(countryOptions)) {
-    const option = document.createElement('option');
-    option.value = code;
-    option.textContent = name;
-    countrySelector.appendChild(option);
-}
+// for (const [code, name] of Object.entries(countryOptions)) {
+//     const option = document.createElement('option');
+//     option.value = code;
+//     option.textContent = name;
+//     countrySelector.appendChild(option);
+// }
 
 function openVirtualStore() {
     var newTab = window.open('V1.0.1/index.html', '_blank');
