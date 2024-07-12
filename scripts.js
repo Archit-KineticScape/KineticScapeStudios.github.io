@@ -210,3 +210,15 @@ function openVirtualStore() {
     var newTab = window.open('V1.0.1/index.html', '_blank');
     newTab.focus();
 }
+
+
+function openApkDownload() {
+    var newTab = window.open("https://drive.google.com/file/d/1hT3TaiP-s7-AgfnRUUlAs58zvoqq9g_k/view?usp=sharing", '_blank');
+    newTab.focus();
+}
+
+
+function openWindowsDownload() {
+    var newTab = window.open("https://drive.google.com/file/d/1d4tfkgWuu774v67NlM-bvutVbcnqV-0E/view?usp=sharing", '_blank');
+    newTab.focus();
+}
